@@ -2,12 +2,12 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>subscribeToPlatformEventsController</members>
-		<members>subscribeToPlatformEventsControllerTest</members>
+	<members>subscribeToPlatformEventsControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>subscribeToPlatformEvents</members>
-		<members>subscribeToPlatformEventsApp</members>
+	<members>subscribeToPlatformEventsApp</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
