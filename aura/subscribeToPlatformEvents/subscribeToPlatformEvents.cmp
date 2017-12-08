@@ -3,20 +3,19 @@
 	<aura:attribute name="sessionId" type="String"/>
 	<aura:attribute name="cometd" type="Object"/>
 	<aura:attribute name="cometdSubscriptions" type="Object[]"/>
-    <aura:attribute name="platformEvents" type="List"/>
-    <aura:attribute name="cometdconfig" type="Object"/>
-    <aura:attribute name="SelectedPE" type="String"/>
+        <aura:attribute name="platformEvents" type="List"/>
+        <aura:attribute name="cometdconfig" type="Object"/>
+        <aura:attribute name="SelectedPE" type="String"/>
 	<aura:attribute name="payloadKeys" type="List"/>
   	<aura:attribute name="notifications" type="Object[]"/>
   	<aura:attribute name="payload" type="List"/>
   	<aura:attribute name="isMuted" type="Boolean" default="false"/>
-    <aura:attribute name="msg" type="String" default=""/>
-
+        <aura:attribute name="msg" type="String" default=""/>
   	<aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
 	<aura:registerEvent name="toastEvent" type="force:showToast"/>
 
 
-  <div class="container" style="padding-left:20px; padding-right:20px;">
+  <div style="padding-left:20px; width: auto;">
 
     <!-- Header -->
     <div class="slds-p-around--x-small slds-border--bottom slds-theme--shade">
@@ -34,7 +33,7 @@
         </div>
       </div>
     </div>
-		<form class="slds-form slds-form_stacked" style="width:300px;">
+		<form class="slds-form slds-form_stacked" style="width:auto;">
          <lightning:select name="mySelect" aura:id="pEvent" label="Platform Events" required="true" value="{!v.SelectedPE}">
              <aura:iteration items="{!v.platformEvents}" var="pe">
                  <option text="{!pe}" value="{!pe}"/>
@@ -55,16 +54,16 @@
       </form>
       
     <!-- Notification list -->
-    <div class="slds-container--fluid slds-scrollable--y content">
+    <div>
         	<div style="padding-top:20px;"><span><b>{!v.msg}</b></span></div>
-          <table>
+          <table cellspacing ="10">
       			 	<tr><aura:iteration items="{!v.payloadKeys}" var="k">
-                    		<th>{!k}</th>
+                    		<th style="white-space:nowrap; border: 1px solid green; padding-left: 3px; padding-right: 3px">{!k}</th>
                     	</aura:iteration>
               		</tr>
               		<aura:iteration items="{!v.payload}" var="p">
                       <tr><aura:iteration items="{!p}" var="v">
-                      		<td>{!v}</td>                    	
+                      		<td style="white-space:nowrap; border: 1px solid green; padding-left: 3px; padding-right: 3px">{!v}</td>                    	
                       </aura:iteration></tr>                   	
                   	</aura:iteration>
               
